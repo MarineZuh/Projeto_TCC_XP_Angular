@@ -5,14 +5,14 @@ A partir do acesso a tela de cadastro, o coordenador do curso irá selecionar o 
 O cadastro de orientador consiste em inserir dados relativos ao professor orientador, como: nome, sobrenome, departamento, email e formação.
 Após o cadastramento será exibido uma lista com o nome dos professores cadastrados.
 	
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 Titulo: Cadastro de Aluno
 Descrição:
 A partir do acesso a tela de cadastro, o coordenador do curso irá selecionar o cadastro de aluno.
 O cadastro de aluno consiste em inserir dados relativos ao aluno orientando, como: nome, sobrenome, curso, email.
 Após o cadastramento será exibido uma lista com o nome dos alunos cadastrados na disciplina de Monografia.
 	
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 Titulo: CADASTRO TCC
 Descrição:
 A partir do acesso a tela de cadastro o coordenador do curso irá selecionar o cadastro de TCC.
