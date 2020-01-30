@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { CadastroProfessorComponent } from './pages/cadastro-professor/cadastro-professor.component';
+import { SharedModule } from '../shared/shared.module';
+import { CadastroRoutingModule } from './cadastro-routing.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CadastroProfessorComponent
+  ],
   imports: [
-    CommonModule
+    SharedModule,
+    CadastroRoutingModule,
   ]
 })
 export class CadastroModule { }
