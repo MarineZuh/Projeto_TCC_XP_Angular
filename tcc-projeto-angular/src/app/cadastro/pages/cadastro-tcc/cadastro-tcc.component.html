@@ -1,0 +1,17 @@
+<h2>Cadastro Professor</h2>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-12" for="tema">Título (Tema):</label>
+    <div class="col-12">
+      <input type="tema" [ngClass]="validacaoCss('tema')" class="form-control" id="tema" name="tema" [formControl]="formulario.get('tema')">
+    </div>
+  </div>
+  
+
+  <div class="form-group">        
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+    </div>
+  </div>
+</div>

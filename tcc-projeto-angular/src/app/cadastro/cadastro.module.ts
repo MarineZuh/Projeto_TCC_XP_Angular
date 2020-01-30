@@ -4,13 +4,15 @@ import { CadastroProfessorComponent } from './pages/cadastro-professor/cadastro-
 import { SharedModule } from '../shared/shared.module';
 import { CadastroRoutingModule } from './cadastro-routing.module';
 import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.component';
+import { CadastroTccComponent } from './pages/cadastro-tcc/cadastro-tcc.component';
 
 
 
 @NgModule({
   declarations: [
     CadastroProfessorComponent,
-    CadastroAlunoComponent
+    CadastroAlunoComponent,
+    CadastroTccComponent
   ],
   imports: [
     SharedModule,
