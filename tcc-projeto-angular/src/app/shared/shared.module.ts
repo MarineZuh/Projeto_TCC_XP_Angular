@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-
+import { ButtonsModule } from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -18,6 +18,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
      ReactiveFormsModule,
      HttpClientModule,
      RouterModule,
+
+     // ngx-bootstrap:
+     ButtonsModule.forRoot()
   ],
   exports: [
     // Angular:
@@ -25,6 +28,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    // bgx-bootstrap:
+    ButtonsModule,
     // Components:
     NavBarComponent
   ],
