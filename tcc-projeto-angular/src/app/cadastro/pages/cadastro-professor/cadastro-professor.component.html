@@ -4,37 +4,37 @@
   <div class="form-group">
     <label class="control-label col-12" for="nome">Nome:</label>
     <div class="col-12">
-      <input type="nome" class="form-control" id="nome" name="nome">
+      <input type="nome" [ngClass]="validacaoCss('nome')" class="form-control" id="nome" name="nome" [formControl]="formulario.get('nome')">
     </div>
   </div>
   <div class="form-group ">
     <label class="control-label col-12" for="sobrenome">Sobrenome:</label>
     <div class="col-12">
-      <input type="sobrenome" class="form-control" id="sobrenome" name="sobrenome">
+      <input type="sobrenome" [ngClass]="validacaoCss('sobrenome')" class="form-control" id="sobrenome" name="sobrenome" [formControl]="formulario.get('sobrenome')">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-12" for="departamento">Departamento:</label>
     <div class="col-12">
-      <input type="departamento" class="form-control" id="departamento" name="departamento">
+      <input type="departamento" [ngClass]="validacaoCss('departamento')" class="form-control" id="departamento" name="departamento" [formControl]="formulario.get('departamento')">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-12" for="email">Email:</label>
     <div class="col-12">
-      <input type="email" class="form-control" id="email" name="email">
+      <input type="email" [ngClass]="validacaoCss('email')" class="form-control" id="email" name="email" [formControl]="formulario.get('email')">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-12" for="formacao">Formação:</label>
     <div class="col-12">
-      <input type="formacao" class="form-control" id="formacao" name="formacao">
+      <input type="formacao" [ngClass]="validacaoCss('formacao')" class="form-control" id="formacao" name="formacao" [formControl]="formulario.get('formacao')">
     </div>
   </div>
 
   <div class="form-group">        
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="button" class="btn btn-primary">Salvar</button>
+      <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
     </div>
   </div>
 </div>

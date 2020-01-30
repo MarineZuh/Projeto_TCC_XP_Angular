@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ButtonsModule } from 'ngx-bootstrap';
+import FormValidacaoCss from './util/form-validacao-css';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ButtonsModule } from 'ngx-bootstrap';
     // bgx-bootstrap:
     ButtonsModule,
     // Components:
-    NavBarComponent
+    NavBarComponent,
+
   ],
 })
 export class SharedModule { }
