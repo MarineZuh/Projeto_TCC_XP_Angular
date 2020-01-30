@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ButtonsModule } from 'ngx-bootstrap';
-import FormValidacaoCss from './util/form-validacao-css';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 
 @NgModule({
@@ -19,9 +20,11 @@ import FormValidacaoCss from './util/form-validacao-css';
      ReactiveFormsModule,
      HttpClientModule,
      RouterModule,
-
+  
+    
      // ngx-bootstrap:
-     ButtonsModule.forRoot()
+     ButtonsModule.forRoot(),
+     BsDropdownModule.forRoot(),
   ],
   exports: [
     // Angular:
