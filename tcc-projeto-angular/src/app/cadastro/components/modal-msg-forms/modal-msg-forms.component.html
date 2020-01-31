@@ -1,0 +1,14 @@
+<app-modal #modal [titulo]="config.titulo">
+  <div body>
+    <div class="icons">
+      <i *ngIf="config.tipo === 'error'" class="material-icons text-danger">
+        error
+      </i>
+
+      <i *ngIf="config.tipo === 'sucesso'" class="material-icons text-success">
+        done
+      </i>
+    </div>
+    <p>{{ config.msg }}</p>
+  </div>
+</app-modal>

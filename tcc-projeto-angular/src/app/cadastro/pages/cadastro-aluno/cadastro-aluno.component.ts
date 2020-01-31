@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import FormValidacaoCss from '@shared/util/form-validacao-css';
 import { Aluno } from '@shared/models/aluno';
+import { ModalMsgFormsService } from '../../services/modal-msg-forms.service';
 
 @Component({
   selector: 'app-cadastro-aluno',
@@ -14,6 +15,7 @@ export class CadastroAlunoComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private mmf: ModalMsgFormsService
   ) { }
 
   ngOnInit() {
@@ -35,10 +37,12 @@ export class CadastroAlunoComponent implements OnInit {
       this.formulario.markAllAsTouched();
       console.log(this.formulario);
       // exibir mensagem error
+      this.mmf.novaMsgFalha('Dados Inválidos!', 'Cheque os dados informados.');
       return;
     }
     const aluno = new Aluno(this.formulario.value);
     console.log(aluno);
+    this.mmf.novaMsgSucesso('Aluno Salvo!', 'Cadastro concluido com sucesso.');
   }
 
   validacaoCss(nomeControle: string){

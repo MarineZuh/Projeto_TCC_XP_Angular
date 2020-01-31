@@ -29,6 +29,7 @@ export class ModalComponent implements OnInit {
   }
 
   fechar(){
+    if(this.modalRef === undefined) return;
     this.modalRef.hide();
   }
 }

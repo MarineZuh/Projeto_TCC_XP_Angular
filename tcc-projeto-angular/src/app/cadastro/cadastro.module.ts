@@ -7,6 +7,7 @@ import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.co
 import { CadastroTccComponent } from './pages/cadastro-tcc/cadastro-tcc.component';
 import { ModalBuscaOrientadorComponent } from './components/modal-busca-orientador/modal-busca-orientador.component';
 import { ModalBuscaOrientandoComponent } from './components/modal-busca-orientando/modal-busca-orientando.component';
+import { ModalMsgFormsComponent } from './components/modal-msg-forms/modal-msg-forms.component';
 
 
 
@@ -16,7 +17,8 @@ import { ModalBuscaOrientandoComponent } from './components/modal-busca-orientan
     CadastroAlunoComponent,
     CadastroTccComponent,
     ModalBuscaOrientadorComponent,
-    ModalBuscaOrientandoComponent
+    ModalBuscaOrientandoComponent,
+    ModalMsgFormsComponent
   ],
   imports: [
     SharedModule,
