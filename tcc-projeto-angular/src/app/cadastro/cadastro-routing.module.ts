@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { CadastroProfessorComponent } from './pages/cadastro-professor/cadastro-professor.component';
 import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.component';
+import { CadastroTccComponent } from './pages/cadastro-tcc/cadastro-tcc.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'aluno',
     component: CadastroAlunoComponent,
+  },
+  {
+    path: 'projeto-tcc',
+    component: CadastroTccComponent,
   },
 ];
 

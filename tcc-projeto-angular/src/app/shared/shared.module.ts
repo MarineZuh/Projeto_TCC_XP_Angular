@@ -5,14 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ButtonsModule } from 'ngx-bootstrap';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
   declarations: [
-    NavBarComponent
+    NavBarComponent,
+    ModalComponent,
   ],
   imports: [
      // Angular:
@@ -25,6 +28,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
      // ngx-bootstrap:
      ButtonsModule.forRoot(),
      BsDropdownModule.forRoot(),
+     ModalModule.forRoot(),
   ],
   exports: [
     // Angular:
@@ -36,6 +40,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
     ButtonsModule,
     // Components:
     NavBarComponent,
+    ModalComponent,
 
   ],
 })

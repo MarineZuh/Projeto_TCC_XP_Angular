@@ -1,0 +1,28 @@
+<app-modal #modal titulo="Busca Professor">
+  <div body>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Departamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let professor of professores">
+          <td>
+            {{ professor.id }}
+          </td>
+          <td>{{ professor.nome }}</td>
+          <td>{{ professor.sobrenome }}</td>
+          <td>{{ professor.departamento }}</td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
+  <div footer>
+    <button type="button" class="btn btn-primary" (click)="selecionar()">Selecionar</button>
+  </div>
+</app-modal>

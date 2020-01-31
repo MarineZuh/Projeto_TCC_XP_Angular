@@ -7,7 +7,26 @@
       <input type="tema" [ngClass]="validacaoCss('tema')" class="form-control" id="tema" name="tema" [formControl]="formulario.get('tema')">
     </div>
   </div>
+  <div class="form-group">
+    <label class="control-label col-12" for="orientador">Orientador:</label>
+    <div class="col-12 input-group ">
+      <input type="orientador" [ngClass]="validacaoCss('orientador.nome')" class="form-control" id="orientador" name="orientador" [formControl]="formulario.get('orientador.nome')">
+      
+      <div class="input-group-append">
+        <button type="button" class="btn btn-secondary" (click)="modalOrientador.abrir()">Buscar</button>
+      </div>
+    </div>
+  </div>
   
+  <div class="form-group">
+    <label class="control-label col-12 " for="orientando">Orientando:</label>
+    <div class="col-12 input-group">
+      <input type="orientando" [ngClass]="validacaoCss('orientando.nome')" class="form-control" id="orientando" name="orientando" [formControl]="formulario.get('orientando.nome')">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-secondary" (click)="modalOrientando.abrir()">Buscar</button>
+      </div>
+    </div>
+  </div>
 
   <div class="form-group">        
     <div class="col-sm-offset-2 col-sm-10">
@@ -15,3 +34,6 @@
     </div>
   </div>
 </div>
+
+<app-modal-busca-orientador #modalOrientador></app-modal-busca-orientador>
+<app-modal-busca-orientando #modalOrientando></app-modal-busca-orientando>

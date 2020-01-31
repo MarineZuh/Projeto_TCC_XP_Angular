@@ -42,6 +42,8 @@ export class CadastroTccComponent implements OnInit {
         email: null
       })
     });
+    this.formulario.get('orientador.nome').disable();
+    this.formulario.get('orientando.nome').disable();
   }
 
   salvar() {

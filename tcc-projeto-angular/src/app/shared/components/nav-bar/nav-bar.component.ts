@@ -10,7 +10,7 @@ export class NavBarComponent implements OnInit {
   items: {nome: string, link: string}[] = [
     {nome: 'Professor', link: 'cadastros/professor'},
     {nome: 'Aluno', link: 'cadastros/aluno'},
-    {nome: 'Projeto Monográfico', link: 'cadastros/projeto'},
+    {nome: 'Projeto Monográfico', link: 'cadastros/projeto-tcc'},
   ];
 
   constructor() { }

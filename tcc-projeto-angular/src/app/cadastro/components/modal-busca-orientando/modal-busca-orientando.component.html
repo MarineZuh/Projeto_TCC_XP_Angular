@@ -1,0 +1,28 @@
+<app-modal #modal titulo="Busca Aluno">
+  <div body>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Curso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos">
+          <td>
+            {{ aluno.id }}
+          </td>
+          <td>{{ aluno.nome }}</td>
+          <td>{{ aluno.sobrenome }}</td>
+          <td>{{ aluno.curso }}</td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
+  <div footer>
+    <button type="button" class="btn btn-primary" (click)="selecionar()">Selecionar</button>
+  </div>
+</app-modal>

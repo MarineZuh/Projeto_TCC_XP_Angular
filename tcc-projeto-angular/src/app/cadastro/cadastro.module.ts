@@ -5,6 +5,8 @@ import { SharedModule } from '../shared/shared.module';
 import { CadastroRoutingModule } from './cadastro-routing.module';
 import { CadastroAlunoComponent } from './pages/cadastro-aluno/cadastro-aluno.component';
 import { CadastroTccComponent } from './pages/cadastro-tcc/cadastro-tcc.component';
+import { ModalBuscaOrientadorComponent } from './components/modal-busca-orientador/modal-busca-orientador.component';
+import { ModalBuscaOrientandoComponent } from './components/modal-busca-orientando/modal-busca-orientando.component';
 
 
 
@@ -12,7 +14,9 @@ import { CadastroTccComponent } from './pages/cadastro-tcc/cadastro-tcc.componen
   declarations: [
     CadastroProfessorComponent,
     CadastroAlunoComponent,
-    CadastroTccComponent
+    CadastroTccComponent,
+    ModalBuscaOrientadorComponent,
+    ModalBuscaOrientandoComponent
   ],
   imports: [
     SharedModule,
