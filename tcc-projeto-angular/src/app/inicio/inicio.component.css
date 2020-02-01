@@ -1,0 +1,24 @@
+.painel {
+  text-align: center;
+  /* background-color: aquamarine; */
+
+  height: 250px;
+
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+hr {
+  border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.footer {
+  margin-top: 100px;
+  text-align: center;
+
+}
