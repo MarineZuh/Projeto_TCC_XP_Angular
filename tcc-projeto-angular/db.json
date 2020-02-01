@@ -1,0 +1,66 @@
+{
+  "professor": [
+    {
+      "id": "01",
+      "nome": "professor 01",
+      "departamento": "departamento 01",
+      "email": "email01@email.com",
+      "formacao": "formação 01"
+    },
+    {
+      "id": "02",
+      "nome": "professor 02",
+      "departamento": "departamento 02",
+      "email": "email02@email.com",
+      "formacao": "formação 02"
+    },
+    {
+      "id": "03",
+      "nome": "professor 03",
+      "departamento": "departamento 03",
+      "email": "email03@email.com",
+      "formacao": "formação 03"
+    },
+    {
+      "id": "04",
+      "nome": "professor 04",
+      "departamento": "departamento 04",
+      "email": "email04@email.com",
+      "formacao": "formação 04"
+    }
+  ],
+  "aluno": [
+    {
+      "id": "01",
+      "nome": "aluno 01",
+      "curso": "curso 01",
+      "email": "email01@email.com"
+    },
+    {
+      "id": "02",
+      "nome": "aluno 02",
+      "curso": "curso 02",
+      "email": "email02@email.com"
+    },
+    {
+      "id": "03",
+      "nome": "aluno 03",
+      "curso": "curso 03",
+      "email": "email03@email.com"
+    },
+    {
+      "id": "04",
+      "nome": "aluno 04",
+      "curso": "curso 04",
+      "email": "email04@email.com"
+    }
+  ],
+  "tcc": [
+    {
+      "id": "01",
+      "tema": "tema 01",
+      "orientador": "01",
+      "orientando": "01"
+    }
+  ]
+}

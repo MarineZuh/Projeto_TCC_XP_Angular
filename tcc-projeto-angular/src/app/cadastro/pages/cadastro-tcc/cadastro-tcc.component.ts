@@ -29,7 +29,6 @@ export class CadastroTccComponent implements OnInit {
       orientador: this.fb.group({
         id: null,
         nome: [null, [Validators.required]],
-        sobrenome: null,
         departamento: null,
         email: null,
         formacao: null
@@ -37,7 +36,6 @@ export class CadastroTccComponent implements OnInit {
       orientando: this.fb.group({
         id: null,
         nome: [null, [Validators.required]],
-        sobrenome: null,
         curso: null,
         email: null
       })

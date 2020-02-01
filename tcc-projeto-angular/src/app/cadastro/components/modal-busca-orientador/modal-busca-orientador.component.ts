@@ -16,10 +16,10 @@ export class ModalBuscaOrientadorComponent implements OnInit {
 
   ngOnInit() {
     this.professores.push({
-      id:1, nome:'professor01', sobrenome:'sobrenome', departamento: 'DAE', email:'', formacao:''
+      id:1, nome:'professor01',  departamento: 'DAE', email:'', formacao:''
     });
     this.professores.push({
-      id:2, nome:'professor02', sobrenome:'sobrenome', departamento: 'DAE', email:'', formacao:''
+      id:2, nome:'professor02',  departamento: 'DAE', email:'', formacao:''
     });
   }
 

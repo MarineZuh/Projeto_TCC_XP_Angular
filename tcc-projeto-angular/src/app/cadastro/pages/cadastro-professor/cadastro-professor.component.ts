@@ -25,7 +25,6 @@ export class CadastroProfessorComponent implements OnInit {
     this.formulario = this.fb.group({
       id: null,
       nome: [null, [Validators.required] ],
-      sobrenome: [null, [Validators.required] ],
       departamento:[null, [Validators.required] ],
       email: [null, [Validators.required, Validators.email] ],
       formacao:[null, [Validators.required] ],
