@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Professor } from 'src/app/shared/models/professor';
 import FormValidacaoCss from 'src/app/shared/util/form-validacao-css';
+import { ProfessorService } from '../../services/professor.service';
+import { finalize } from 'rxjs/operators';
+import { ModalMsgFormsService } from '../../services/modal-msg-forms.service';
 
 
 @Component({
@@ -15,6 +18,8 @@ export class CadastroProfessorComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private professorService: ProfessorService,
+    private mmf: ModalMsgFormsService,
   ) { }
 
   ngOnInit() {
@@ -35,11 +40,22 @@ export class CadastroProfessorComponent implements OnInit {
     if(this.formulario.invalid) {
       this.formulario.markAllAsTouched();
       console.log(this.formulario);
-      // exibir mensagem error
+      this.mmf.novaMsgFalha('Dados Inválidos!', 'Cheque os dados informados.');
       return;
     }
     const professor = new Professor(this.formulario.value);
+    this.formulario.disable();
     console.log(professor);
+    this.professorService.salvar(professor).pipe(
+      finalize(() => {
+        this.formulario.reset();
+        this.formulario.enable();
+      })
+    ).subscribe(res => {
+      this.mmf.novaMsgSucesso('Professor Salvo!', 'Cadastro concluido com sucesso.');
+    }, err => {
+      this.mmf.novaMsgFalha('Erro ao salvar!', 'Não foi possivel salvar o professor. Tente novamente mais tarde...');
+    });
   }
 
   validacaoCss(nomeControle: string){

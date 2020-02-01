@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import FormValidacaoCss from '@shared/util/form-validacao-css';
 import { Aluno } from '@shared/models/aluno';
 import { ModalMsgFormsService } from '../../services/modal-msg-forms.service';
+import { AlunoService } from '../../services/aluno.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cadastro-aluno',
@@ -15,7 +17,8 @@ export class CadastroAlunoComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private mmf: ModalMsgFormsService
+    private mmf: ModalMsgFormsService,
+    private alunoService: AlunoService,
   ) { }
 
   ngOnInit() {
@@ -40,8 +43,19 @@ export class CadastroAlunoComponent implements OnInit {
       return;
     }
     const aluno = new Aluno(this.formulario.value);
+    this.formulario.disable();
     console.log(aluno);
-    this.mmf.novaMsgSucesso('Aluno Salvo!', 'Cadastro concluido com sucesso.');
+    this.alunoService.salvar(aluno).pipe(
+      finalize(() => {
+        this.formulario.reset();
+        this.formulario.enable();
+      })
+    ).subscribe(res => {
+      this.mmf.novaMsgSucesso('Aluno Salvo!', 'Cadastro concluido com sucesso.');
+    }, err => {
+      this.mmf.novaMsgFalha('Erro ao salvar!', 'Não foi possivel salvar o aluno. Tente novamente mais tarde...');
+    });
+   
   }
 
   validacaoCss(nomeControle: string){

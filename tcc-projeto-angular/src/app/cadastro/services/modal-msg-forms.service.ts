@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { ModalMsgFormsConfig } from '../models/modal-msg-forms-config';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { ModalMsgFormsConfig } from '../models/modal-msg-forms-config';
 })
 export class ModalMsgFormsService {
 
-  private msgCriada = new BehaviorSubject<ModalMsgFormsConfig>(null);
+  private msgCriada = new Subject<ModalMsgFormsConfig>();
   msgCriada$ = this.msgCriada.asObservable();
 
   constructor() { }

@@ -1,8 +1,20 @@
 <app-modal #modal titulo="Busca Aluno">
   <div body>
+
+
+    <div class="col-12 input-group">
+      <input #input type="text" class="form-control" id="buscar" name="buscar" placeholder="Nome do Aluno">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-secondary" (click)="buscar(input.value)">Buscar</button>
+      </div>
+    </div>
+
+    <hr>
+
     <table class="table table-striped">
       <thead>
         <tr>
+          <th scope="col"></th>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
         
@@ -11,6 +23,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let aluno of alunos">
+          <td> <button type="button" class="btn btn-sm btn-primary" (click)="selecionar(aluno)">Selecionar</button></td>
           <td>
             {{ aluno.id }}
           </td>
@@ -22,7 +35,7 @@
     </table>
    
   </div>
-  <div footer>
+  <!-- <div footer>
     <button type="button" class="btn btn-primary" (click)="selecionar()">Selecionar</button>
-  </div>
+  </div> -->
 </app-modal>

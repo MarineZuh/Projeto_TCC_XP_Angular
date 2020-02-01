@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { ModalComponent } from '@shared/components/modal/modal.component';
 import { Professor } from '@shared/models/professor';
+import { ProfessorService } from '../../services/professor.service';
 
 @Component({
   selector: 'app-modal-busca-orientador',
@@ -9,26 +10,28 @@ import { Professor } from '@shared/models/professor';
 })
 export class ModalBuscaOrientadorComponent implements OnInit {
 
+  @Output() selecaoFeita = new EventEmitter<Professor>();
   @ViewChild('modal', {static: true}) private modal: ModalComponent;
-  professores: Professor[] = [];
+  professores: Professor[];
 
-  constructor() { }
+  constructor(
+    private professorService: ProfessorService,
+  ) { }
 
   ngOnInit() {
-    this.professores.push({
-      id:1, nome:'professor01',  departamento: 'DAE', email:'', formacao:''
-    });
-    this.professores.push({
-      id:2, nome:'professor02',  departamento: 'DAE', email:'', formacao:''
-    });
+    
   }
 
   abrir() {
     this.modal.exibir();
   }
 
-  selecionar(){
+  selecionar(professor: Professor){
     this.modal.fechar();
+    this.selecaoFeita.emit(professor);
   }
-
+  buscar(valor){
+   console.log(valor);
+   this.professorService.todos().subscribe(resp => this.professores = resp);
+  }
 }
