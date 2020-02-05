@@ -19,7 +19,7 @@ export class ModalBuscaOrientadorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
   }
 
   abrir() {
@@ -32,6 +32,12 @@ export class ModalBuscaOrientadorComponent implements OnInit {
   }
   buscar(valor){
    console.log(valor);
-   this.professorService.todos().subscribe(resp => this.professores = resp);
+   this.professorService.buscarPorNome(valor).subscribe(resp => {
+
+    if(resp[0] === null) return;
+    console.log(resp);
+    this.professores = resp
+
+    });
   }
 }

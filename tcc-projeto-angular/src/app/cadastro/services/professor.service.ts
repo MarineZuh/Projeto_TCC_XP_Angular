@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { environment } from "@environments/environment";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Professor } from "@shared/models/professor";
@@ -21,5 +21,10 @@ export class ProfessorService {
 
   salvar(professor: Professor): Observable<Professor> {
     return this.http.post<Professor>(this.apiUrl, professor);
+  }
+
+  buscarPorNome(nome: string): Observable<Professor[]> {
+    const params = new HttpParams().set('nome', nome);
+    return this.http.get<Professor>(this.apiUrl + "/busca", {params: params}).pipe(map((professor: Professor) => [professor]));
   }
 }

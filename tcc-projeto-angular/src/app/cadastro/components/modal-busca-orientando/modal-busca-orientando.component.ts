@@ -18,7 +18,7 @@ export class ModalBuscaOrientandoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  
+
   }
 
   abrir() {
@@ -32,6 +32,10 @@ export class ModalBuscaOrientandoComponent implements OnInit {
 
   buscar(valor){
     console.log(valor);
-    this.alunoService.todos().subscribe(resp => this.alunos = resp);
+    this.alunoService.buscaPorNome(valor).subscribe(resp => {
+      if(resp[0] === null) return;
+      console.log(resp);
+      this.alunos = resp;
+    });
    }
 }
