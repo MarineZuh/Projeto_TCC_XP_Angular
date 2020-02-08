@@ -24,7 +24,13 @@ export class ProfessorService {
   }
 
   buscarPorNome(nome: string): Observable<Professor[]> {
-    const params = new HttpParams().set('nome', nome);
-    return this.http.get<Professor>(this.apiUrl + "/busca", {params: params}).pipe(map((professor: Professor) => [professor]));
+    const params = new HttpParams().set("nome", nome);
+    return this.http
+      .get<Professor[]>(this.apiUrl + "/busca", { params: params })
+      .pipe(
+        map((professores: Professor[]) =>
+          professores.map(professor => new Professor(professor))
+        )
+      );
   }
 }

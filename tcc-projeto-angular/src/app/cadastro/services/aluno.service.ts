@@ -24,7 +24,9 @@ export class AlunoService {
   }
 
   buscaPorNome(nome: string): Observable<Aluno[]> {
-    const params = new HttpParams().set('nome', nome);
-    return this.http.get<Aluno>(this.apiUrl + "/busca", {params: params}).pipe(map((aluno: Aluno) => [aluno]));
+    const params = new HttpParams().set("nome", nome);
+    return this.http
+      .get<Aluno[]>(this.apiUrl + "/busca", { params: params })
+      .pipe(map((alunos: Aluno[]) => alunos.map(aluno => new Aluno(aluno))));
   }
 }
